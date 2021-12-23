@@ -10,25 +10,31 @@ class Queue:
         self._fill_dequeue_stack()
         return str(self.dequeue_stack)
 
+    # Time Complexity: O(n)
     def _fill_enqueue_stack(self):
         while not self.dequeue_stack.isEmpty():
             self.enqueue_stack.push(self.dequeue_stack.pop())
 
+    # Time Complexity: O(n)
     def _fill_dequeue_stack(self):
         while not self.enqueue_stack.isEmpty():
             self.dequeue_stack.push(self.enqueue_stack.pop())
 
+    # Time Complexity: O(n)
     def enqueue(self, value):
         self._fill_enqueue_stack()
         self.enqueue_stack.push(value)
 
+    # Time Complexity: O(n)
     def dequeue(self):
         self._fill_dequeue_stack()
         return self.dequeue_stack.pop()
 
+    # Time Complexity: O(n)
     def isEmpty(self):
         return self.enqueue_stack.isEmpty() and self.dequeue_stack.isEmpty()
 
+    # Time Complexity: O(n)
     def peek(self):
         self._fill_dequeue_stack()
         return self.dequeue_stack.peek()

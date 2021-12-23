@@ -18,9 +18,11 @@ class Stack:
             current_node = current_node.next
         return stack
 
+    # Time Complexity: O(1)
     def peek(self):
         return self.top.value if self.top is not None else None
 
+    # Time Complexity: O(1)
     def push(self, value):
         new_node = Node(value)
         new_node.next = self.top
@@ -29,6 +31,7 @@ class Stack:
         if self.bottom is None:
             self.bottom = new_node
 
+    # Time Complexity: O(1)
     def pop(self):
         if self.top is None:
             return None
@@ -41,6 +44,7 @@ class Stack:
         del pop_node
         return value
 
+    # Time Complexity: O(1)
     def isEmpty(self):
         return self.length == 0
 

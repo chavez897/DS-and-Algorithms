@@ -18,9 +18,11 @@ class Queue:
             current_node = current_node.next
         return queue
 
+    # Time Complexity: O(1)
     def peek(self):
         return self.first.value if self.first is not None else None
 
+    # Time Complexity: O(1)
     def enqueue(self, value):
         new_node = Node(value)
         if self.first is None:
@@ -30,6 +32,7 @@ class Queue:
         self.last = new_node
         self.length += 1
 
+    # Time Complexity: O(1)
     def dequeue(self):
         if self.first is None:
             return None
